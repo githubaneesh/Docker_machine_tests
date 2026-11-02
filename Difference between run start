@@ -1,0 +1,7 @@
+Difference between docker pull, docker run and docker start
+
+These three commands have different purposes.
+Command	Purpose
+docker pull	Downloads an image
+docker run	Creates and starts a new container
+docker start	Starts an existing stopped container

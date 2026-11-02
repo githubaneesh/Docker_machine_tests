@@ -1,0 +1,60 @@
+Explain Docker Architecture
+Docker uses a client-server architecture. It allows users to build, run, manage, and distribute applications using containers.
+
+1. What is Docker CLI?
+
+    Docker CLI (Command Line Interface) is a tool that allows users to communicate with Docker using commands in the terminal.
+    Main responsibilities:
+    - Accepts Docker commands from users.
+    - Sends requests to the Docker daemon through the Docker Engine API.
+    - Displays the results in the terminal.
+    Think of Docker CLI as the interface between the user and Docker.
+
+
+2. What is Docker daemon (dockerd)?
+    Docker daemon (dockerd) is a background service responsible for managing Docker objects.
+
+    It runs continuously and listens for Docker API requests.
+
+Main responsibilities:
+    - Manages Docker images.
+    - Creates and manages containers.
+    - Manages Docker networks.
+    - Manages Docker volumes.
+    - Communicates with container runtimes to run containers.
+
+3. What is Docker Engine?
+    Docker Engine is the core technology that enables building and running containers.
+    It consists of three important parts:
+    1. Docker CLI – Command-line interface.
+    2. Docker REST API – Communication interface.
+    3. Docker daemon (dockerd) – Background service that manages Docker resources.
+    Docker Engine provides the functionality needed to build, run, and manage containers.
+    Step-by-step workflow:
+    1. User: Enters docker run hello-world in the terminal.
+    2. Docker CLI: Receives the command and converts it into an API request.
+    3. Docker Engine API: Transfers the request to the Docker daemon.
+    4. Docker daemon (dockerd): Processes the request.
+    5. Image management: Checks whether the hello-world image is available locally. If not, it pulls the image from Docker Hub.
+    6. Container runtime: The daemon uses containerd and a low-level runtime such as runc to create and start the container.
+    7. Output: The container executes and displays the Hello from Docker message in the terminal.
+
+
+5. Difference between Docker Image, Container and Registry
+
+1. Docker Image
+
+    A Docker image is a read-only template used to create containers.
+
+    Example: nginx, ubuntu, hello-world.
+
+2. Docker Container
+
+    A container is a running or stopped instance of a Docker image.
+
+    Example: A running Nginx application.
+3. Docker Registry
+
+    A registry is a storage and distribution service where Docker images are stored and shared.
+
+    Example: Docker Hub.
